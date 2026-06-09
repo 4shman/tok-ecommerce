@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TOK | E-Commerce</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="app-container">
+      <aside class="sidebar">
+        <div class="logo">
+          <img src="assets/profil.jpg" alt="Logo TOK" />
+          <h2>TOK</h2>
+        </div>
+        <ul class="nav-menu">
+          <li class="active"><i class="fa-solid fa-house"></i> Home</li>
+        </ul>
+        <div class="playlists">
+          <p class="section-title">CATEGORIES</p>
+          <ul id="category-list">
+            <li class="active-category" data-filter="all">All Collection</li>
+            <li data-filter="tops">Tops</li>
+            <li data-filter="outerwear">Outerwear</li>
+            <li data-filter="bottoms">Bottoms</li>
+            <li data-filter="accessories">Accessories</li>
+          </ul>
+        </div>
+        <div class="wishlist-section">
+          <p class="section-title">WISHLIST</p>
+          <ul class="wishlist-list"></ul>
+        </div>
+      </aside>
+
+      <main class="main-view">
+        <main class="main-view">
+    <header class="mobile-header">
+        <button class="menu-toggle" id="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </header>
+        <div class="content-scroll">
+          <section
+            class="hero-section"
+            style="background-image: url(&quot;assets/hero.jpg&quot;)"
+          >
+            <div class="hero-text">
+              <p>NEW COLLECTION</p>
+              <h1>Elevate Your Everyday Style</h1>
+            </div>
+          </section>
+          <section class="shelf">
+            <h2>Trending This Week</h2>
+            <div class="product-grid" id="product-grid">
+              <div class="card" data-category="tops">
+                <button class="wishlist-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+                <div class="img-container">
+                  <img src="assets/kaos.jpg" alt="Oversized T-Shirt" />
+                  <button class="add-btn" data-price="150000">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+                <h3>Oversized T-Shirt</h3>
+                <p>Rp 150.000</p>
+              </div>
+              <div class="card" data-category="outerwear">
+                <button class="wishlist-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+                <div class="img-container">
+                  <img src="assets/jaket.jpg" alt="Denim Jacket" />
+                  <button class="add-btn" data-price="350000">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+                <h3>Denim Jacket</h3>
+                <p>Rp 350.000</p>
+              </div>
+              <div class="card" data-category="bottoms">
+                <button class="wishlist-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+                <div class="img-container">
+                  <img src="assets/celana.jpg" alt="Cargo Pants" />
+                  <button class="add-btn" data-price="280000">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+                <h3>Cargo Pants</h3>
+                <p>Rp 280.000</p>
+              </div>
+              <div class="card" data-category="tops">
+                <button class="wishlist-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+                <div class="img-container">
+                  <img src="assets/kemeja.jpg" alt="Flannel Shirt" />
+                  <button class="add-btn" data-price="220000">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+                <h3>Flannel Shirt</h3>
+                <p>Rp 220.000</p>
+              </div>
+              <div class="card" data-category="outerwear">
+                <button class="wishlist-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+                <div class="img-container">
+                  <img src="assets/hoodie.jpg" alt="Hoodie" />
+                  <button class="add-btn" data-price="300000">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+                <h3>Classic Hoodie</h3>
+                <p>Rp 300.000</p>
+              </div>
+              <div class="card" data-category="accessories">
+                <button class="wishlist-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+                <div class="img-container">
+                  <img src="assets/aksesoris.jpg" alt="Accessories" />
+                  <button class="add-btn" data-price="95000">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+                <h3>Tote Bag & Beanies</h3>
+                <p>Rp 95.000</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <footer class="bottom-bar">
+      <div class="cart-info">
+        <i class="fa-solid fa-cart-shopping cart-icon"></i>
+        <div>
+          <h4 id="cart-items">0 Items in Cart</h4>
+          <p id="cart-total">Total: Rp 0</p>
+        </div>
+      </div>
+      <button class="checkout-btn">CHECKOUT SEKARANG</button>
+    </footer>
+
+    <div class="modal-overlay" id="checkout-modal">
+      <div class="modal-content">
+        <button class="close-modal" id="close-btn">&times;</button>
+        <h2>Checkout</h2>
+        <form id="checkout-form">
+          <input type="text" placeholder="Full Name" required />
+          <textarea placeholder="Address" required></textarea>
+          <button type="submit" class="pay-btn">CONFIRM PAYMENT</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="quickview-modal">
+      <div class="quickview-content">
+        <button class="close-modal" id="close-quickview">&times;</button>
+        <div class="qv-layout">
+          <div class="qv-image-container"><img src="" id="qv-img" /></div>
+          <div class="qv-details">
+            <h2 id="qv-title"></h2>
+            <p class="qv-price" id="qv-price"></p>
+            <button class="qv-add-btn" id="qv-add-to-cart">
+              TAMBAHKAN KE KERANJANG
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
