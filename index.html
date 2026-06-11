@@ -3,23 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TOK | E-Commerce</title>
+    <title>TOK | Premium E-Commerce</title>
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="app-container">
-      <aside class="sidebar">
+      <aside class="sidebar" id="sidebar">
         <div class="logo">
-          <img src="assets/profil.jpg" alt="Logo TOK" />
-          <h2>TOK</h2>
+          <div class="logo-img-wrapper">
+            <img
+              src="assets/profil.jpg"
+              alt="Logo TOK"
+              onerror="this.src = 'https://via.placeholder.com/50'"
+            />
+          </div>
+          <h2>TOK.</h2>
         </div>
+
         <ul class="nav-menu">
           <li class="active"><i class="fa-solid fa-house"></i> Home</li>
+          <li><i class="fa-solid fa-fire"></i> Trending</li>
         </ul>
+
         <div class="playlists">
           <p class="section-title">CATEGORIES</p>
           <ul id="category-list">
@@ -30,110 +43,231 @@
             <li data-filter="accessories">Accessories</li>
           </ul>
         </div>
+
         <div class="wishlist-section">
-          <p class="section-title">WISHLIST</p>
-          <ul class="wishlist-list"></ul>
+          <p class="section-title">
+            WISHLIST <span id="wishlist-count">(0)</span>
+          </p>
+          <ul class="wishlist-list" id="wishlist-items"></ul>
         </div>
       </aside>
 
       <main class="main-view">
-        <main class="main-view">
-    <header class="mobile-header">
-        <button class="menu-toggle" id="menu-toggle">
+        <header class="top-header">
+          <button class="menu-toggle" id="menu-toggle">
             <i class="fa-solid fa-bars"></i>
-        </button>
-    </header>
+          </button>
+          <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search for Tops, Outerwear, Pants..."
+              autocomplete="off"
+            />
+          </div>
+        </header>
+
         <div class="content-scroll">
           <section
             class="hero-section"
-            style="background-image: url(&quot;assets/hero.jpg&quot;)"
+            style="
+              background-image:
+                linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),
+                url(&quot;assets/hero.jpg&quot;);
+            "
           >
             <div class="hero-text">
               <p>NEW COLLECTION</p>
               <h1>Elevate Your Everyday Style</h1>
             </div>
           </section>
+
           <section class="shelf">
-            <h2>Trending This Week</h2>
+            <h2 id="shelf-title">Trending This Week</h2>
             <div class="product-grid" id="product-grid">
-              <div class="card" data-category="tops">
+              <div
+                class="card"
+                data-category="tops"
+                data-name="Oversized T-Shirt"
+              >
                 <button class="wishlist-btn">
                   <i class="fa-regular fa-heart"></i>
                 </button>
                 <div class="img-container">
-                  <img src="assets/kaos.jpg" alt="Oversized T-Shirt" />
-                  <button class="add-btn" data-price="150000">
+                  <img
+                    src="assets/kaos.jpg"
+                    alt="Oversized T-Shirt"
+                    onerror="
+                      this.src =
+                        'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&q=80'
+                    "
+                  />
+                  <button
+                    class="add-btn"
+                    data-price="150000"
+                    data-name="Oversized T-Shirt"
+                  >
                     <i class="fa-solid fa-plus"></i>
                   </button>
                 </div>
                 <h3>Oversized T-Shirt</h3>
                 <p>Rp 150.000</p>
               </div>
-              <div class="card" data-category="outerwear">
+
+              <div
+                class="card"
+                data-category="outerwear"
+                data-name="Denim Jacket"
+              >
                 <button class="wishlist-btn">
                   <i class="fa-regular fa-heart"></i>
                 </button>
                 <div class="img-container">
-                  <img src="assets/jaket.jpg" alt="Denim Jacket" />
-                  <button class="add-btn" data-price="350000">
+                  <img
+                    src="assets/jaket.jpg"
+                    alt="Denim Jacket"
+                    onerror="
+                      this.src =
+                        'https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?w=500&q=80'
+                    "
+                  />
+                  <button
+                    class="add-btn"
+                    data-price="350000"
+                    data-name="Denim Jacket"
+                  >
                     <i class="fa-solid fa-plus"></i>
                   </button>
                 </div>
                 <h3>Denim Jacket</h3>
                 <p>Rp 350.000</p>
               </div>
-              <div class="card" data-category="bottoms">
+
+              <div class="card" data-category="bottoms" data-name="Cargo Pants">
                 <button class="wishlist-btn">
                   <i class="fa-regular fa-heart"></i>
                 </button>
                 <div class="img-container">
-                  <img src="assets/celana.jpg" alt="Cargo Pants" />
-                  <button class="add-btn" data-price="280000">
+                  <img
+                    src="assets/celana.jpg"
+                    alt="Cargo Pants"
+                    onerror="
+                      this.src =
+                        'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=500&q=80'
+                    "
+                  />
+                  <button
+                    class="add-btn"
+                    data-price="280000"
+                    data-name="Cargo Pants"
+                  >
                     <i class="fa-solid fa-plus"></i>
                   </button>
                 </div>
                 <h3>Cargo Pants</h3>
                 <p>Rp 280.000</p>
               </div>
-              <div class="card" data-category="tops">
+
+              <div class="card" data-category="tops" data-name="Flannel Shirt">
                 <button class="wishlist-btn">
                   <i class="fa-regular fa-heart"></i>
                 </button>
                 <div class="img-container">
-                  <img src="assets/kemeja.jpg" alt="Flannel Shirt" />
-                  <button class="add-btn" data-price="220000">
+                  <img
+                    src="assets/kemeja.jpg"
+                    alt="Flannel Shirt"
+                    onerror="
+                      this.src =
+                        'https://images.unsplash.com/photo-1596755094514-f87e32f85e2c?w=500&q=80'
+                    "
+                  />
+                  <button
+                    class="add-btn"
+                    data-price="220000"
+                    data-name="Flannel Shirt"
+                  >
                     <i class="fa-solid fa-plus"></i>
                   </button>
                 </div>
                 <h3>Flannel Shirt</h3>
                 <p>Rp 220.000</p>
               </div>
-              <div class="card" data-category="outerwear">
+
+              <div
+                class="card"
+                data-category="outerwear"
+                data-name="Classic Hoodie"
+              >
                 <button class="wishlist-btn">
                   <i class="fa-regular fa-heart"></i>
                 </button>
                 <div class="img-container">
-                  <img src="assets/hoodie.jpg" alt="Hoodie" />
-                  <button class="add-btn" data-price="300000">
+                  <img
+                    src="assets/hoodie.jpg"
+                    alt="Classic Hoodie"
+                    onerror="
+                      this.src =
+                        'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500&q=80'
+                    "
+                  />
+                  <button
+                    class="add-btn"
+                    data-price="300000"
+                    data-name="Classic Hoodie"
+                  >
                     <i class="fa-solid fa-plus"></i>
                   </button>
                 </div>
                 <h3>Classic Hoodie</h3>
                 <p>Rp 300.000</p>
               </div>
-              <div class="card" data-category="accessories">
+
+              <div
+                class="card"
+                data-category="accessories"
+                data-name="Tote Bag & Beanies"
+              >
                 <button class="wishlist-btn">
                   <i class="fa-regular fa-heart"></i>
                 </button>
                 <div class="img-container">
-                  <img src="assets/aksesoris.jpg" alt="Accessories" />
-                  <button class="add-btn" data-price="95000">
+                  <img
+                    src="assets/aksesoris.jpg"
+                    alt="Accessories"
+                    onerror="
+                      this.src =
+                        'https://images.unsplash.com/photo-1591561954557-26941169b49e?w=500&q=80'
+                    "
+                  />
+                  <button
+                    class="add-btn"
+                    data-price="95000"
+                    data-name="Tote Bag & Beanies"
+                  >
                     <i class="fa-solid fa-plus"></i>
                   </button>
                 </div>
                 <h3>Tote Bag & Beanies</h3>
                 <p>Rp 95.000</p>
               </div>
+            </div>
+
+            <div
+              id="no-results"
+              style="
+                display: none;
+                text-align: center;
+                padding: 40px;
+                color: #6b7280;
+              "
+            >
+              <i
+                class="fa-solid fa-box-open"
+                style="font-size: 40px; margin-bottom: 10px"
+              ></i>
+              <h3>Produk tidak ditemukan</h3>
+              <p>Coba gunakan kata kunci lain.</p>
             </div>
           </section>
         </div>
@@ -142,22 +276,27 @@
 
     <footer class="bottom-bar">
       <div class="cart-info">
-        <i class="fa-solid fa-cart-shopping cart-icon"></i>
+        <div class="cart-icon-wrapper">
+          <i class="fa-solid fa-cart-shopping cart-icon"></i>
+          <span class="cart-badge" id="cart-badge">0</span>
+        </div>
         <div>
           <h4 id="cart-items">0 Items in Cart</h4>
           <p id="cart-total">Total: Rp 0</p>
         </div>
       </div>
-      <button class="checkout-btn">CHECKOUT SEKARANG</button>
+      <button class="checkout-btn" id="open-checkout">CHECKOUT SEKARANG</button>
     </footer>
 
     <div class="modal-overlay" id="checkout-modal">
       <div class="modal-content">
         <button class="close-modal" id="close-btn">&times;</button>
-        <h2>Checkout</h2>
+        <h2>Checkout Details</h2>
+        <div class="order-summary" id="order-summary"></div>
         <form id="checkout-form">
           <input type="text" placeholder="Full Name" required />
-          <textarea placeholder="Address" required></textarea>
+          <input type="email" placeholder="Email Address" required />
+          <textarea placeholder="Shipping Address" rows="3" required></textarea>
           <button type="submit" class="pay-btn">CONFIRM PAYMENT</button>
         </form>
       </div>
@@ -169,8 +308,14 @@
         <div class="qv-layout">
           <div class="qv-image-container"><img src="" id="qv-img" /></div>
           <div class="qv-details">
-            <h2 id="qv-title"></h2>
-            <p class="qv-price" id="qv-price"></p>
+            <span class="qv-category" id="qv-category-tag">CATEGORY</span>
+            <h2 id="qv-title">Product Title</h2>
+            <p class="qv-price" id="qv-price">Rp 0</p>
+            <p class="qv-desc">
+              Desain premium yang mengutamakan kenyamanan dan gaya. Cocok untuk
+              digunakan dalam berbagai aktivitas sehari-hari dengan material
+              berkualitas tinggi.
+            </p>
             <button class="qv-add-btn" id="qv-add-to-cart">
               TAMBAHKAN KE KERANJANG
             </button>
